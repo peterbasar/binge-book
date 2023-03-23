@@ -1,0 +1,20 @@
+.header-dekstop-navigation, 
+.header-logo-text-wrapper {
+    margin: 30px;
+}
+
+.header-logo-text-wrapper{
+    text-align: center;
+}
+
+.header-dekstop-navigation > *, 
+.header-logo-text-wrapper > * {
+    color: var(--mui-palette-secondary-main);
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+}

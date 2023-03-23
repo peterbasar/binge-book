@@ -1,0 +1,9 @@
+.carousel-title, 
+.carousel-link > *{
+    color: var(--mui-palette-secondary-main);
+}
+
+.carousel-link{
+    text-decoration: none;
+    margin-left: 20px;
+}

@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';
+import { PROMO_WALLPAPER } from 'Assets/Images';
 
 
 const Promo = () => {
@@ -19,7 +20,8 @@ const Promo = () => {
         <Grid height={300} item xs={12}>
           <div className='promo-wrapper'>
             <div className='promo-image-wrapper'>
-              <img height={"100%"} alt="wallpaper-avengers" src={require(`Assets/Images/promo-wallpaper.jpg`)} />
+              <img  height={"100%"} alt="wallpaper-avengers"
+                    src={PROMO_WALLPAPER} />
             </div>
             <div className='promo-link'>
               <Link to={FRONTEND_ENDPOINTS.MOVIES}>Explore Movies and Shows</Link>

@@ -99,10 +99,10 @@ export const DataManagerStore = create<DataManagerStoreInterface>()((set, get) =
     }
     return []
   },
-  getNLatestMovies: (count=15) => {
+  getNLatestMovies: (count=8) => {
     return get().getSortedItems(get().movies, "yearDesc").slice(0, count)
   },
-  getNLatestSeries: (count=15) => {
+  getNLatestSeries: (count=8) => {
     return get().getSortedItems(get().series, "yearDesc").slice(0, count)
   },
 }))

@@ -17,7 +17,7 @@ const Header = () => {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} style={{backgroundColor: theme.palette.primary.main}}>
         <Grid item xs={5}>
-          <nav className='header-dekstop-navigation'>
+          <nav className='header-desktop-navigation'>
             <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>
             <Link to={FRONTEND_ENDPOINTS.MOVIES}>Movies</Link>
             <Link to={FRONTEND_ENDPOINTS.SERIES}>Series</Link>

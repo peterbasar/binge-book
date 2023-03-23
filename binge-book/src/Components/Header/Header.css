@@ -1,4 +1,4 @@
-.header-dekstop-navigation, 
+.header-desktop-navigation, 
 .header-logo-text-wrapper {
     margin: 30px;
 }
@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-.header-dekstop-navigation > *, 
+.header-desktop-navigation > *, 
 .header-logo-text-wrapper > * {
     color: var(--mui-palette-secondary-main);
     vertical-align: middle;

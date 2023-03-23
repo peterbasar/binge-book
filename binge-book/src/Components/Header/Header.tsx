@@ -14,23 +14,21 @@ const Header = () => {
 
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} style={{backgroundColor: theme.palette.primary.main}}>
-        <Grid item xs={5}>
-          <nav className='header-desktop-navigation'>
-            <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>
-            <Link to={FRONTEND_ENDPOINTS.MOVIES}>Movies</Link>
-            <Link to={FRONTEND_ENDPOINTS.SERIES}>Series</Link>
-          </nav>
-        </Grid>
-        <Grid item xs={2}>
-            <div className='header-logo-text-wrapper'>
-              <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>BingeBook</Link>
-            </div>
-        </Grid>
-          <Grid item xs={5} />
+    <Grid container spacing={0} style={{backgroundColor: theme.palette.primary.main}}>
+      <Grid item xs={5}>
+        <nav className='header-desktop-navigation'>
+          <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>
+          <Link to={FRONTEND_ENDPOINTS.MOVIES}>Movies</Link>
+          <Link to={FRONTEND_ENDPOINTS.SERIES}>Series</Link>
+        </nav>
       </Grid>
-    </Box>
+      <Grid item xs={2}>
+          <div className='header-logo-text-wrapper'>
+            <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>BingeBook</Link>
+          </div>
+      </Grid>
+        <Grid item xs={5} />
+    </Grid>
   );
 }
 export default Header;

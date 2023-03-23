@@ -22,9 +22,8 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2 }} style={{ backgroundColor: theme.palette.primary.main}}>
+    <Box sx={{ flexGrow: 1, margin: 2 }} style={{ backgroundColor: theme.palette.primary.main}}>
       <Grid container spacing={0} alignItems={"center"}>
-        
         {/* Title */}
         <Grid item>
           <h1 className='carousel-title'>{title}</h1>
@@ -42,9 +41,9 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
           </Grid>
         </Link>
       </Grid>
-      
+
+      {/* Items */}
       <Grid container spacing={2} alignItems={"center"}>
-        {/* Items */}
         {
           items.map((item)=>{
             return (
@@ -55,7 +54,6 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
           })
         }  
       </Grid>
-          
     </Box>
   );
 }

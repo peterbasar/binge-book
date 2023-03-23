@@ -1,0 +1,6 @@
+.footer-wrapper{
+    height: 200px;
+    background-color: var(--mui-palette-common-black);
+    color: var(--mui-palette-secondary-main);
+    vertical-align: bottom;
+}

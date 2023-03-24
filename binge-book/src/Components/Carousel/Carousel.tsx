@@ -1,6 +1,6 @@
 import React from 'react';
 import './Carousel.css';
-import { Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 /* MUI */
 import Box from '@mui/material/Box';
@@ -19,31 +19,21 @@ interface CarouselInterface {
 
 
 const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
+  const navigate = useNavigate();
   const theme = useTheme();
 
   return (
-    <Box sx={{ flexGrow: 1, margin: 2 }} style={{ backgroundColor: theme.palette.primary.main}}>
-      <Grid container spacing={0} alignItems={"center"}>
+    <Box margin={3} style={{ backgroundColor: theme.palette.primary.main}}>
+      <Grid container gap={1} marginBottom={3} alignItems={"center"} className='carousel-title-wrapper' direction={"row"}>
         {/* Title */}
-        <Grid item>
-          <h1 className='carousel-title'>{title}</h1>
-        </Grid>
-
-        {/* Link */}
-        <Link className='carousel-link' to={linkUrl}>
-          <Grid container spacing={0} alignItems={"center"}>
-            <Grid item>
-                <h3>show more</h3>
-              </Grid>
-              <Grid item> 
-                <AddIcon />
-              </Grid>
-          </Grid>
-        </Link>
+        <h1>{title}</h1>
+        <a onClick={()=>navigate(linkUrl)}>
+          <h3>show more <AddIcon /></h3>
+        </a>
       </Grid>
 
       {/* Items */}
-      <Grid container spacing={2} alignItems={"center"}>
+      <Grid container spacing={2} wrap={"nowrap"} overflow={"hidden"}>
         {
           items.map((item)=>{
             return (

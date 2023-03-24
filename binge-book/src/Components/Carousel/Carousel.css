@@ -1,9 +1,13 @@
-.carousel-title, 
-.carousel-link > *{
+.carousel-title-wrapper *{
     color: var(--mui-palette-secondary-main);
+    margin: 0;
+    padding: 0;
 }
 
-.carousel-link{
+.carousel-title-wrapper > a{
     text-decoration: none;
-    margin-left: 20px;
+    cursor: pointer;
+}
+.carousel-title-wrapper > a *{
+    vertical-align: bottom;
 }

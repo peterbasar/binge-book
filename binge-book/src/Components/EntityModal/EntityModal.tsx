@@ -15,11 +15,12 @@ import { MISSING_IMAGE } from 'Assets/Images';
 
 
 interface EntityModalInterface {
-  item: dataItemInterface
+  item: dataItemInterface,
+  children: React.ReactNode,
 }
 
 
-const EntityModal = ({item}: EntityModalInterface) => {
+const EntityModal = ({item, children}: EntityModalInterface) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -29,14 +30,13 @@ const EntityModal = ({item}: EntityModalInterface) => {
 
   return (
     <>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <a className='entitymodal-anchor' onClick={handleOpen}>{children}</a>
       <Modal
           open={open}
           onClose={handleClose}
           className="entitymodal-modal"
         >
-          <div className='entitymodal-box'
-          >         
+          <div className='entitymodal-box'>         
 
             <Grid container sx={{height: {xs: "200px", sm: "360px"}}}>
               {/* Image */}

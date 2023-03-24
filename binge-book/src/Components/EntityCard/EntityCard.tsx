@@ -13,18 +13,19 @@ interface EntityCardInterface {
 
 const EntityCard = ({item}: EntityCardInterface) => {
   return (
-    <div className='entitycard-card-wrapper'>
-      <img  onError={(e) => {
-              (e.target as HTMLImageElement).src=MISSING_IMAGE;
-            }} 
-            src={item.images['Poster Art'].url}
-      />
-      <div className='entitycard-card-overlay'>
-        <h5>{item.title}</h5>
-        <p>{item.releaseYear}</p>
-        <EntityModal item={item} />
-      </div>
-    </div>  
+    <EntityModal item={item}>
+      <div className='entitycard-card-wrapper'>
+        <img  onError={(e) => {
+                (e.target as HTMLImageElement).src=MISSING_IMAGE;
+              }} 
+              src={item.images['Poster Art'].url}
+        />
+        <div className='entitycard-card-overlay'>
+          <h5>{item.title}</h5>
+          <p>{item.releaseYear}</p>
+        </div>
+      </div>              
+    </EntityModal>
   );
 }
 export default EntityCard;

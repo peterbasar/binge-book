@@ -1,3 +1,7 @@
+.entitymodal-anchor{
+    cursor: pointer;
+}
+
 .entitymodal-modal{
     display: flex;
 	flex-direction: column;

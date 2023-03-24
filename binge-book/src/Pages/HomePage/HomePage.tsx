@@ -10,26 +10,19 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 /* Zustand */
-import { DataManagerStore } from 'Components/DataManager/DataManager.store';
+import { useDataManagerStore } from 'Components/DataManager/DataManager.store';
 
 
 const HomePage = () => {
   const theme = useTheme();
 
-  const getNLatestMovies = DataManagerStore((state) => (state.getNLatestMovies));
-  const getNLatestSeries = DataManagerStore((state) => (state.getNLatestSeries));
+  const getNLatestMovies = useDataManagerStore((state) => (state.getNLatestMovies));
+  const getNLatestSeries = useDataManagerStore((state) => (state.getNLatestSeries));
 
   return (
-    // <div style={{minHeight: "100vh", width: "100%", backgroundColor: "red"}}>
-    //   ASD
-    // </div>
     <Box sx={{ 
       display: "flex",
       flexDirection: "column",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-      alignItems: "stretch",
-      alignContent: "stretch",
       backgroundColor: theme.palette.primary.main,
       minHeight: "100vh"
     }}>

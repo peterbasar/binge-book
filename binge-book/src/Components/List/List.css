@@ -1,0 +1,9 @@
+.list-title{
+    color: var(--mui-palette-secondary-main);
+}
+.list-pagination{
+    margin: 30px auto;
+}
+.list-pagination .MuiPaginationItem-root{
+    color: var(--mui-palette-secondary-main);
+}

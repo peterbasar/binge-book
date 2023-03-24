@@ -5,10 +5,10 @@ import data from "Assets/data/data.json";
 
 
 /* Zustand */
-import { dataItemInterface, DataManagerStore } from './DataManager.store';
+import { dataItemInterface, useDataManagerStore } from './DataManager.store';
 
 
-export const initializeDataManager = () => {
-  const parseItems = DataManagerStore((state) => state.parseItems);
+export const useInitializeDataManager = () => {
+  const parseItems = useDataManagerStore((state) => state.parseItems);
   parseItems(data.entries as Array<dataItemInterface>)
 }

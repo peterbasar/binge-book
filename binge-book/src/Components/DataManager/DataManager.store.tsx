@@ -64,7 +64,7 @@ interface DataManagerStoreInterface {
 }
 
 
-export const DataManagerStore = create<DataManagerStoreInterface>()((set, get) => ({
+export const useDataManagerStore = create<DataManagerStoreInterface>()((set, get) => ({
   movies: [],
   series: [],
 

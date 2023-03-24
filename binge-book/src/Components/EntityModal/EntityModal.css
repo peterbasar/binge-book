@@ -1,0 +1,60 @@
+.entitymodal-modal{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+}
+.entitymodal-box{
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 0;
+    max-width: 600px;
+    margin: auto auto;
+    background-color: var(--mui-palette-common-black);
+    color: var(--mui-palette-secondary-main);
+}
+.entitymodal-image-wrapper{
+    width: 100%;
+    height: 100%;
+}
+.entitymodal-image-wrapper > img{
+    width: inherit;
+    height: inherit;
+    background-color: var(--mui-palette-common-black);
+    object-fit: cover;
+}
+
+.entitymodal-text-wrapper {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: center;
+    height: inherit;
+    padding: 10px 10px;
+}
+.entitymodal-text-wrapper > *{
+    margin: 5px 0px;
+}
+#entitymodal-close-icon{
+    float: right;
+}
+#entitymodal-close-icon > *{
+    margin: auto auto;
+}
+.entitymodal-text-wrapper > div > h2 {margin: 0;}
+.entitymodal-text-wrapper > div{
+    margin: 0;
+}
+.entitymodal-text-wrapper > p{
+    overflow-y: scroll;
+}
+.entitymodal-text-description-mobile{
+    max-height: 200px;
+    overflow-y: scroll;
+    margin: 10px;
+    margin-top: 0px;
+}

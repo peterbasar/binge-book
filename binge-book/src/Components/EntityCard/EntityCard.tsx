@@ -2,6 +2,9 @@ import React from 'react';
 import './EntityCard.css';
 import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 import { MISSING_IMAGE } from 'Assets/Images';
+/* Components */
+import EntityModal from 'Components/EntityModal/EntityModal';
+
 
 interface EntityCardInterface {
   item: dataItemInterface
@@ -19,6 +22,7 @@ const EntityCard = ({item}: EntityCardInterface) => {
       <div className='entitycard-card-overlay'>
         <h5>{item.title}</h5>
         <p>{item.releaseYear}</p>
+        <EntityModal item={item} />
       </div>
     </div>  
   );

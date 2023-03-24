@@ -42,7 +42,7 @@ const HomePage = () => {
       />
       <Carousel
         title='Latest Series'
-        linkUrl='/movies'
+        linkUrl='/series'
         items={getNLatestSeries()}
       />
       <Footer />

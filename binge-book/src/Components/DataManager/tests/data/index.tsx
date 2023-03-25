@@ -1,0 +1,5 @@
+export { data as testData } from "Components/DataManager/tests/data/testData"
+export { data as yearDescData } from "Components/DataManager/tests/data/sortItems.yearDesc.test.data"
+export { data as yearAscData } from "Components/DataManager/tests/data/sortItems.yearAsc.test.data"
+export { data as titleDescData } from "Components/DataManager/tests/data/sortItems.titleDesc.test.data"
+export { data as titleAscData } from "Components/DataManager/tests/data/sortItems.titleAsc.test.data"

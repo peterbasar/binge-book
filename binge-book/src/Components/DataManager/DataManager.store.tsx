@@ -16,7 +16,7 @@ export interface dataItemInterface {
 }
 
 
-const sortItems = (
+export const sortItems = (
   items: Array<dataItemInterface>,
   attribute: (item: dataItemInterface) => number | string,
   type: "asc" | "desc"):Array<dataItemInterface> =>

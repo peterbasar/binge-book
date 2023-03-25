@@ -37,7 +37,7 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
         {
           items.map((item)=>{
             return (
-              <Grid item> 
+              <Grid item key={item.title}> 
                 <EntityCard item={item} />
               </Grid>
             )

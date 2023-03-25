@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className='footer-wrapper'>
       <Grid container gap={2}>
-        <Grid xs={12} className="footer-page-links-wrapper">
+        <Grid item xs={12} className="footer-page-links-wrapper">
           <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>
           <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Terms and Conditions</Link>
           <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Privacy Policy</Link>
@@ -23,7 +23,7 @@ const Footer = () => {
           <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Help</Link>
           <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Manage Account</Link>
         </Grid>
-        <Grid xs={12}>
+        <Grid item xs={12}>
           Copyright © 2023 Bingebook. All Rights Reserved
         </Grid>
         <Grid container justifyContent={"space-between"}>

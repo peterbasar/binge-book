@@ -1,4 +1,3 @@
-import React from 'react';
 import { create } from 'zustand'
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';

@@ -2,13 +2,11 @@ import React from 'react';
 import './MoviesPage.css';
 /* Components */
 import Header from 'Components/Header/Header';
-import Promo from 'Components/Promo/Promo';
 import List from 'Components/List/List';
 import Footer from 'Components/Footer/Footer';
 /* MUI */
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
-import Pagination from '@mui/material/Pagination';
 /* Zustand */
 import { useDataManagerStore } from 'Components/DataManager/DataManager.store';
 

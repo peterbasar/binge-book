@@ -1,14 +1,12 @@
 import React from 'react';
 import './ListSelect.css';
-import { Link } from "react-router-dom";
 /* MUI */
 import { useTheme } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 /* Constants */
-import { FRONTEND_ENDPOINTS } from 'config';
 
 
 interface ListSelectInterface {

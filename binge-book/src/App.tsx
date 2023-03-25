@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, useLocation } from "react-router-dom";
 /* Pages */
@@ -8,7 +7,6 @@ import MoviesPage from 'Pages/MoviesPage/MoviesPage';
 import SeriesPage from 'Pages/SeriesPage/SeriesPage';
 /* MUI */
 import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
 /* Components and Functions */
 import CustomTheme from 'Theme';
 import { useInitializeDataManager } from 'Components/DataManager/DataManager';
@@ -29,7 +27,7 @@ function App() {
   useEffect(() => {
     setActiveEndpoint(window.location.pathname);
     window.scrollTo(0, 0)
-  }, [location])
+  }, [location, setActiveEndpoint])
 
 
   return (

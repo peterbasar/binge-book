@@ -19,6 +19,7 @@ const EntityCard = ({item}: EntityCardInterface) => {
                 (e.target as HTMLImageElement).src=MISSING_IMAGE;
               }} 
               src={item.images['Poster Art'].url}
+              alt={`Poster of ${item.title}`}
         />
         <div className='entitycard-card-overlay'>
           <h5>{item.title}</h5>

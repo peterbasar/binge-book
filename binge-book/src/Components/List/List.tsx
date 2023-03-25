@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import './List.css';
-import { Link } from "react-router-dom";
 import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 /* MUI */
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
-import AddIcon from '@mui/icons-material/Add';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import { SelectChangeEvent } from "@mui/material";
 /* Components */
 import EntityCard from 'Components/EntityCard/EntityCard';
@@ -46,23 +43,23 @@ const List = ({title, rawItems}: ListInterface) => {
   /* Get data based on the current listMode */
   useEffect(()=>{
     let mode: "yearDesc" | "yearAsc" | "alphaDesc" | "alphaAsc" = "yearDesc";
-    if (listMode == LIST_MODES.yearDesc){
+    if (listMode === LIST_MODES.yearDesc){
       mode = "yearDesc";
-    }else if (listMode == LIST_MODES.yearAsc){
+    }else if (listMode === LIST_MODES.yearAsc){
       mode = "yearAsc";
-    }else if (listMode == LIST_MODES.alphaDesc){
+    }else if (listMode === LIST_MODES.alphaDesc){
       mode = "alphaDesc";
-    }else if (listMode == LIST_MODES.alphaAsc){
+    }else if (listMode === LIST_MODES.alphaAsc){
       mode = "alphaAsc";
     };
     setItems(getSortedItems(rawItems, mode));
-  }, [listMode])
+  }, [listMode, setItems, getSortedItems, rawItems])
 
 
   /* Detect page or items change */
   useEffect(()=>{
     setCurrentPageItems(items.slice((page-1)*itemsPerPage, page*itemsPerPage));
-  }, [items, listMode, page])
+  }, [items, listMode, page, itemsPerPage, setCurrentPageItems])
 
 
   return (

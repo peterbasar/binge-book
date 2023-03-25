@@ -1,4 +1,3 @@
-import React from 'react';
 import { create } from 'zustand'
 
 
@@ -74,9 +73,9 @@ export const useDataManagerStore = create<DataManagerStoreInterface>()((set, get
     let series: Array<dataItemInterface> = [];
 
     value.forEach(item => {
-      if (item.programType == "series"){
+      if (item.programType === "series"){
         series.push(item);
-      }else if(item.programType == "movie"){
+      }else if(item.programType === "movie"){
         movies.push(item);
       }
     });

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './EntityModal.css';
-import { Link } from "react-router-dom";
 /* MUI */
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 import Modal from '@mui/material/Modal';
@@ -10,7 +8,6 @@ import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import CircularProgress from '@mui/material/CircularProgress';
 /* Constants */
-import { FRONTEND_ENDPOINTS } from 'config';
 import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 import { MISSING_IMAGE } from 'Assets/Images';
 /* Components and functions */
@@ -44,11 +41,11 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
         setRequested(true);
       });
     }  
-  }, [open])
+  }, [open, item.releaseYear, requested])
 
   return (
     <>
-      <a className='entitymodal-anchor' onClick={handleOpen}>{children}</a>
+      <div className='entitymodal-anchor' onClick={handleOpen}>{children}</div>
       <Modal
           open={open}
           onClose={handleClose}
@@ -69,6 +66,7 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
                   <div id="image" className='entitymodal-image-wrapper'>
                     <img  onError={(e) => {(e.target as HTMLImageElement).src=MISSING_IMAGE;}} 
                           src={item.images['Poster Art'].url}
+                          alt={`Poster of ${item.title}`}
                     />
                   </div>
                 </Grid>

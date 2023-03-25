@@ -27,9 +27,9 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
       <Grid container gap={1} marginBottom={3} alignItems={"center"} className='carousel-title-wrapper' direction={"row"}>
         {/* Title */}
         <h1>{title}</h1>
-        <a onClick={()=>navigate(linkUrl)}>
+        <div onClick={()=>navigate(linkUrl)}>
           <h3>show more <AddIcon /></h3>
-        </a>
+        </div>
       </Grid>
 
       {/* Items */}

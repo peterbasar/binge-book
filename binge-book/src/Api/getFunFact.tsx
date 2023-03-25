@@ -1,5 +1,3 @@
-import React from "react";
-import apiCall from "./apiCall";
 import { API_ENDPOINTS } from "config";
 
 
@@ -17,7 +15,7 @@ const getFunFact = async ({num, setStatus, setResponse}: getFunFactInterface) =>
     /* Request and extract text from the API endpoint */
     let xmlRequest = new XMLHttpRequest();
     xmlRequest.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             setResponse(this.responseText);
         }
         setStatus(this.status);

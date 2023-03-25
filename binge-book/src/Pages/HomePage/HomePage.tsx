@@ -7,7 +7,6 @@ import Carousel from 'Components/Carousel/Carousel';
 import Footer from 'Components/Footer/Footer';
 /* MUI */
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material/styles';
 /* Zustand */
 import { useDataManagerStore } from 'Components/DataManager/DataManager.store';

@@ -11,7 +11,7 @@
 	align-content: center;
 }
 .entitymodal-box{
-    overflow-y: auto;
+    overflow-y: hidden;
     border-radius: 5px;
     padding: 0;
     max-width: 600px;
@@ -39,22 +39,23 @@
 	align-content: center;
     height: inherit;
     padding: 10px 10px;
+    overflow: auto;
+}
+.entitymodal-text-wrapper {
+    height: inherit;
 }
 .entitymodal-text-wrapper > *{
     margin: 5px 0px;
 }
-#entitymodal-close-icon{
+.entitymodal-close-icon{
     float: right;
 }
-#entitymodal-close-icon > *{
+.entitymodal-close-icon > *{
     margin: auto auto;
 }
-.entitymodal-text-wrapper > div > h2 {margin: 0;}
-.entitymodal-text-wrapper > div{
+.entitymodal-text-wrapper > h2 {margin: 0;}
+.entitymodal-text-wrapper{
     margin: 0;
-}
-.entitymodal-text-wrapper > p{
-    overflow-y: scroll;
 }
 .entitymodal-text-description-mobile{
     max-height: 200px;

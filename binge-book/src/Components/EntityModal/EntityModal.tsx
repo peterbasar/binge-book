@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './EntityModal.css';
 import { Link } from "react-router-dom";
 /* MUI */
@@ -8,10 +8,13 @@ import { useTheme } from '@mui/material/styles';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
+import CircularProgress from '@mui/material/CircularProgress';
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';
 import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 import { MISSING_IMAGE } from 'Assets/Images';
+/* Components and functions */
+import getFunFact from 'Api/getFunFact';
 
 
 interface EntityModalInterface {
@@ -21,12 +24,27 @@ interface EntityModalInterface {
 
 
 const EntityModal = ({item, children}: EntityModalInterface) => {
+  let theme = useTheme();
+
   const [open, setOpen] = React.useState(false);
+  const [requested, setRequested] = React.useState<Boolean>(false);
+  const [reqStatus, setReqStatus] = React.useState<number>(0);
+  const [reqResponse, setReqResponse] = React.useState<string>("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const theme = useTheme();
-  
+  /* Request fun fact when the modal opens */
+  useEffect(()=>{
+    if (open && !requested){
+      getFunFact({
+        num: item.releaseYear,
+        setStatus: (val: number)=>{setReqStatus(val)},
+        setResponse: (val: string)=>{setReqResponse(val)},
+      }).then(()=>{
+        setRequested(true);
+      });
+    }  
+  }, [open])
 
   return (
     <>
@@ -34,32 +52,63 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
       <Modal
           open={open}
           onClose={handleClose}
+          
           className="entitymodal-modal"
         >
           <div className='entitymodal-box'>         
 
-            <Grid container sx={{height: {xs: "200px", sm: "360px"}}}>
-              {/* Image */}
-              <Grid style={{height: "inherit", maxWidth: "50vw", padding: "10px"}}>
-                <div id="image" className='entitymodal-image-wrapper'>
-                  <img  onError={(e) => {(e.target as HTMLImageElement).src=MISSING_IMAGE;}} 
-                        src={item.images['Poster Art'].url}
-                  />
-                </div>
+            <Grid container>
+              <Grid item xs={12} margin={1}>
+                <Button size="small" className='entitymodal-close-icon' variant="contained" startIcon={<CloseIcon />}
+                        onClick={handleClose} />
               </Grid>
 
-              {/* Right side text */}
-              <Grid item xs direction={"column"}  className="entitymodal-text-wrapper"
-                  // Toggle description on xs size
-                  sx={{'#desc': {display: {xs: "none", sm: "block"}}}}>
-                <div>
-                  <Button size="small" id='entitymodal-close-icon' variant="contained" startIcon={<CloseIcon />}
-                          onClick={handleClose} />
-                  <h2>{item.title}</h2>
-                  <h4>{item.programType.charAt(0).toUpperCase() + item.programType.slice(1)}, {item.releaseYear}</h4>
-                  <p><i>fun fact</i></p>
-                </div>
-                <p id='desc'>{item.description}{item.description}{item.description}{item.description}</p> 
+              <Grid container sx={{height: {xs: "200px", sm: "360px"}}}>
+                {/* Image */}
+                <Grid style={{height: "inherit", maxWidth: "50vw", padding: "10px"}}>
+                  <div id="image" className='entitymodal-image-wrapper'>
+                    <img  onError={(e) => {(e.target as HTMLImageElement).src=MISSING_IMAGE;}} 
+                          src={item.images['Poster Art'].url}
+                    />
+                  </div>
+                </Grid>
+
+                {/* Right side text */}
+                <Grid container xs margin={1} direction={"row"} height={"inherit"} overflow={"auto"}
+                    // Toggle description on xs size
+                    sx={{
+                      '#desc': {display: {xs: "none", sm: "block"}},
+                      '#title': {fontSize: {xs: "large", sm: "larger"}},
+                    }}>
+
+                  <Grid container>
+                    <Grid item xs={12}>
+                      <div className="entitymodal-text-wrapper">
+                        <h2 id='title'>{item.title}</h2>
+                        <h4>{item.programType.charAt(0).toUpperCase() + item.programType.slice(1)}, {item.releaseYear}</h4>
+                        
+                        {/* Handle requested fact */}
+                        <p>
+                          { reqStatus === 200
+                            ? (<i>{reqResponse}</i>) 
+                            : ( reqStatus === 0
+                                ? ((<p style={{color: theme.palette.primary.main}}>
+                                      <CircularProgress size={12} /> <i>Loading interesting fact</i>
+                                    </p>))
+                                : ((<p style={{color: theme.palette.error.main}}>
+                                      <i>Failed requesting an interesting fact</i>
+                                    </p>))
+                              )
+                          }
+                          
+                        </p>
+                      </div>
+                    </Grid>
+                    <Grid xs={12}>
+                      <p id='desc'>{item.description}{item.description}{item.description}{item.description}</p> 
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
 

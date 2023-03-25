@@ -4,7 +4,7 @@ export enum FRONTEND_ENDPOINTS {
     SERIES = "/series",
 }
 export enum API_ENDPOINTS {
-    NUMER_FACTS = "http://numbersapi.com/",
+    NUMBER_FACTS = "http://numbersapi.com/",
 }
 export enum OTHER_LINKS {
     APPSTORE_LINK = "https://www.apple.com/app-store/",

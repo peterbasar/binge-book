@@ -77,10 +77,7 @@ const List = ({title, rawItems}: ListInterface) => {
         </Grid>
 
         {/* Options */}
-        <Grid container marginBottom={2} justifyContent={"space-between"}>
-          <Grid>
-            Search bar
-          </Grid>
+        <Grid container marginBottom={2} justifyContent={"flex-end"}>
           <Grid>
             <ListSelect
               activeOption={listMode}

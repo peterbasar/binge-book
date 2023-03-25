@@ -1,6 +1,25 @@
 .footer-wrapper{
-    height: 200px;
+    padding: 20px;
     background-color: var(--mui-palette-common-black);
-    color: var(--mui-palette-secondary-main);
     vertical-align: bottom;
+}
+.footer-wrapper{
+    color: var(--mui-palette-secondary-main);
+}
+
+.footer-page-links-wrapper > *{
+    text-decoration: none;
+    color: var(--mui-palette-secondary-main);
+    margin-right: 20px;
+}
+
+.footer-social-icons > a > *,
+.footer-store-images-wrapper > a > img{
+    color: var(--mui-palette-secondary-main);
+    padding: 5px;
+    padding-left: 0px;
+    font-size: 40px;
+}
+.footer-store-images-wrapper > a > img{
+    height: 40px;
 }

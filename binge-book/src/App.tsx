@@ -25,7 +25,7 @@ function App() {
   /* Load and process the data */
   useInitializeDataManager(data.entries as Array<dataItemInterface>);
 
-  /* Set the current location endpoint each page change */
+  /* Set the current location endpoint variable each page change */
   const location = useLocation()
   useEffect(() => {
     setActiveEndpoint(window.location.pathname);

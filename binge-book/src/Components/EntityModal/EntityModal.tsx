@@ -72,7 +72,7 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
                 </Grid>
 
                 {/* Right side text */}
-                <Grid item xs margin={1} height={"inherit"} overflow={"auto"}
+                <Grid item xs height={"inherit"} overflow={"auto"}
                     // Toggle description on xs size
                     sx={{
                       '#desc': {display: {xs: "none", sm: "block"}},
@@ -102,7 +102,7 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
                         </p>
                       </div>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid padding={1} item xs={12}>
                       <p id='desc'>{item.description}</p> 
                     </Grid>
                   </Grid>

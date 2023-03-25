@@ -12,15 +12,18 @@ import CustomTheme from 'Theme';
 import { useInitializeDataManager } from 'Components/DataManager/DataManager';
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';
+import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 /* Zustand */
 import { useAppStore } from 'App.store';
+/* Data of the application */
+import data from "Assets/data/data.json";
 
 
 function App() {
   const setActiveEndpoint = useAppStore((state) => state.setActiveEndpoint);
 
   /* Load and process the data */
-  useInitializeDataManager();
+  useInitializeDataManager(data.entries as Array<dataItemInterface>);
 
   /* Set the current location endpoint each page change */
   const location = useLocation()

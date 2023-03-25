@@ -1,12 +1,8 @@
-/* Constants */
-import data from "Assets/data/data.json";
-
-
 /* Zustand */
 import { dataItemInterface, useDataManagerStore } from './DataManager.store';
 
 
-export const useInitializeDataManager = () => {
+export const useInitializeDataManager = (data: Array<dataItemInterface>) => {
   const parseItems = useDataManagerStore((state) => state.parseItems);
-  parseItems(data.entries as Array<dataItemInterface>)
+  parseItems(data as Array<dataItemInterface>)
 }

@@ -18,3 +18,28 @@
     font-size: large;
     font-weight: 600;
 }
+
+.header-mobile-navigation-menu-button{
+    padding: 20px;
+    margin: 8px;
+    color: var(--mui-palette-secondary-main);
+    cursor: pointer;
+}
+.header-mobile-navigation-wrapper {
+    position: absolute;
+    z-index: 20;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: var(--mui-palette-primary-main);
+    width: inherit;
+}
+.header-mobile-navigation > *{
+    text-align: center;
+    padding: 15px;
+    font-size: large;
+    font-weight: 600;
+}
+.header-mobile-navigation > * > *{
+    text-decoration: none;
+    color: var(--mui-palette-secondary-main);
+}

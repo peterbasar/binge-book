@@ -36,14 +36,22 @@ function App() {
   return (
     <CssVarsProvider theme={CustomTheme}>
       <Routes>
-        <Route path={FRONTEND_ENDPOINTS.HOMEPAGE} element={<HomePage />} />
-        <Route path={FRONTEND_ENDPOINTS.MOVIES} element={<MoviesPage />} />
-        <Route path={FRONTEND_ENDPOINTS.SERIES} element={<SeriesPage />} />
+        <Route path={FRONTEND_ENDPOINTS.HOMEPAGE} element={
+          <HomePage />
+        } />
+        <Route path={FRONTEND_ENDPOINTS.MOVIES} element={
+          <MoviesPage />
+        } />
+        <Route path={FRONTEND_ENDPOINTS.SERIES} element={
+          <SeriesPage />
+        } />
 
         {/* Using path="*"" means "match anything", so this route
               acts like a catch-all for URLs that we don't have explicit
               routes for. */}
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={
+          <HomePage />
+        } />
       </Routes>
     </CssVarsProvider>
   );

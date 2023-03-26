@@ -6,7 +6,27 @@ import { testData } from 'Components/DataManager/tests/data';
 import HomePage from './HomePage';
 
 
-test('Homepage: carousels and its contents', () => {
+test('HomePage: header included', () => {
+  const { container } = render(
+    <BrowserRouter>
+      <HomePage />
+    </BrowserRouter>
+  );
+  expect(container.querySelector('nav')).toBeInTheDocument();
+});
+
+
+test('HomePage: footer included', () => {
+  const { container } = render(
+    <BrowserRouter>
+      <HomePage />
+    </BrowserRouter>
+  );
+  expect(container.querySelector('footer')).toBeInTheDocument();
+});
+
+
+test('HomePage: carousels and its contents', () => {
   /* Initialize 'useInitializeDataManager' */
   renderHook(() => useInitializeDataManager(testData));
   

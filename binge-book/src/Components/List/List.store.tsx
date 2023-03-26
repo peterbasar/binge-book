@@ -10,10 +10,11 @@ export enum LIST_MODES {
 }
 
 
-interface ListStoreInterface {
+interface useListStoreInterface {
   listMode: LIST_MODES,
   setListMode: (value: LIST_MODES) => void,
   itemsPerPage: number,
+  setItemsPerPage: (value: number) => void,
   items: Array<dataItemInterface>,
   setItems: (items: Array<dataItemInterface>) => void,
   currentPageItems: Array<dataItemInterface>,
@@ -22,12 +23,15 @@ interface ListStoreInterface {
   setPage: (value: number) => void,
 }
 
-export const useListStore = create<ListStoreInterface>()((set, get) => ({
+export const useListStore = create<useListStoreInterface>()((set, get) => ({
   listMode: LIST_MODES.yearDesc,
   setListMode: (value) => {
     set({listMode: value})
   },
   itemsPerPage: 15,
+  setItemsPerPage: (value) => {
+    set({itemsPerPage: value})
+  },
   items: [],
   setItems: (items) => {
     set({items: items})

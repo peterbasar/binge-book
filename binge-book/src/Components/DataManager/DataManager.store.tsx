@@ -50,7 +50,7 @@ export const sortItems = (
 };
 
 
-interface DataManagerStoreInterface {
+interface useDataManagerStoreInterface {
   movies: Array<dataItemInterface>,
   series: Array<dataItemInterface>,
   parseItems: (value: Array<dataItemInterface>) => void,
@@ -63,7 +63,7 @@ interface DataManagerStoreInterface {
 }
 
 
-export const useDataManagerStore = create<DataManagerStoreInterface>()((set, get) => ({
+export const useDataManagerStore = create<useDataManagerStoreInterface>()((set, get) => ({
   movies: [],
   series: [],
 

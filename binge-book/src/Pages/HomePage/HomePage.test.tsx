@@ -28,8 +28,13 @@ test('Homepage: carousels and its contents', () => {
   if (wrapper != null && wrapper.parentElement != null){
     within(wrapper.parentElement).getAllByText(moviesToCheck[0]);
     within(wrapper.parentElement).getAllByText(moviesToCheck[1]);
+
+    /* Check if there are only moviesToCheck.length number of items */
+    expect(Array.from(wrapper.parentElement
+      .querySelectorAll('.entitycard-card-wrapper'))).toHaveLength(moviesToCheck.length);
   }
   
+
   /* Check if Latest Series exists and also contains 'show more' */
   wrapper = getByText("Latest Series").parentElement;
   expect(wrapper).toBeInTheDocument();
@@ -41,5 +46,9 @@ test('Homepage: carousels and its contents', () => {
   if (wrapper != null && wrapper.parentElement != null){
     within(wrapper.parentElement).getAllByText(seriesToCheck[0]);
     within(wrapper.parentElement).getAllByText(seriesToCheck[1]);
+
+    /* Check if there are only moviesToCheck.length number of items */
+    expect(Array.from(wrapper.parentElement
+      .querySelectorAll('.entitycard-card-wrapper'))).toHaveLength(seriesToCheck.length);
   }
 });

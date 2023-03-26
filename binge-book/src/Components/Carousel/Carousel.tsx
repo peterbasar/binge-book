@@ -27,13 +27,13 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
       <Grid container gap={1} marginBottom={3} alignItems={"center"} className='carousel-title-wrapper' direction={"row"}>
         {/* Title */}
         <h1>{title}</h1>
-        <div onClick={()=>navigate(linkUrl)}>
+        <div onClick={() => {navigate(linkUrl)}}>
           <h3>show more <AddIcon /></h3>
         </div>
       </Grid>
 
       {/* Items */}
-      <Grid container spacing={2} wrap={"nowrap"} overflow={"hidden"}>
+      <Grid container spacing={2} wrap={"nowrap"} overflow={"hidden"} data-testid="carousel-list">
         {
           items.map((item)=>{
             return (

@@ -20,6 +20,7 @@ const getFunFact = async ({num, setStatus, setResponse}: getFunFactInterface) =>
         }
         setStatus(this.status);
     };
+    
     xmlRequest.open('GET', requestUrl, true);
     await xmlRequest.send();
 }

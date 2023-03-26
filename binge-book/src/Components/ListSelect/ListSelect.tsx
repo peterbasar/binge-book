@@ -42,9 +42,9 @@ const ListSelect = ({activeOption, options, handleChange}: ListSelectInterface) 
           }}
         >
           {
-            options.map((item: any) => {
+            options.map((item: any, index: number) => {
               return (
-                <MenuItem value={item}><span>{item}</span></MenuItem>
+                <MenuItem key={index} value={item}><span>{item}</span></MenuItem>
               )
             })
           }

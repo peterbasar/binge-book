@@ -21,13 +21,14 @@ const ListSelect = ({activeOption, options, handleChange}: ListSelectInterface) 
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 80,
+      <FormControl data-testid="list-select-form-control" sx={{ m: 1, minWidth: 80,
          "*": {color: theme.palette.secondary.main}}}
       >
         <InputLabel id="demo-simple-select-autowidth-label">
           <span>Filter</span>
         </InputLabel>
         <Select
+          data-testid="list-select-list"
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
           value={activeOption}

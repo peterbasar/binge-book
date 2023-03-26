@@ -10,6 +10,9 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 /* Zustand */
 import { useDataManagerStore } from 'Components/DataManager/DataManager.store';
+/* Constants */
+import { FRONTEND_ENDPOINTS } from 'config';
+import { PROMO_WALLPAPER } from 'Assets/Images';
 
 
 const HomePage = () => {
@@ -26,7 +29,11 @@ const HomePage = () => {
       minHeight: "100vh"
     }}>
       <Header />
-      <Promo />
+      <Promo
+        imageUrl={PROMO_WALLPAPER}
+        linkUrl={FRONTEND_ENDPOINTS.MOVIES}
+        title={"Explore Movies and Shows"}
+      />
       <Carousel
         title='Latest Movies'
         linkUrl='/movies'

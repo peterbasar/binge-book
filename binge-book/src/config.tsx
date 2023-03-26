@@ -2,6 +2,13 @@ export enum FRONTEND_ENDPOINTS {
     HOMEPAGE = "/",
     MOVIES = "/movies",
     SERIES = "/series",
+
+    /* Not implemented */
+    TERMS_AND_CONDITIONS = "/terms-and-conditions",
+    PRIVACY_POLICY = "/privacy-policy",
+    COLLECTION_STATEMENT = "/collectio-statement",
+    HELP = "/help",
+    MANAGE_ACCOUNT = "/manage-account",
 }
 export enum API_ENDPOINTS {
     NUMBER_FACTS = "http://numbersapi.com/",
@@ -15,3 +22,5 @@ export enum OTHER_LINKS {
     TWITTER_LINK = "https://twitter.com/",
     INSTAGRAM_LINK = "https://instagram.com/",
 }
+
+export const COPYRIGHT: string = "Copyright © 2023 Bingebook. All Rights Reserved"

@@ -63,7 +63,7 @@ const List = ({title, rawItems}: ListInterface) => {
 
 
   return (
-    <div style={{margin: "0 auto"}}>
+    <div style={{margin: "0 auto"}} data-testid="list">
       <Box maxWidth={1920} sx={{ flexGrow: 1, margin: 2 }} style={{ backgroundColor: theme.palette.primary.main}}>
         
         {/* Title */}

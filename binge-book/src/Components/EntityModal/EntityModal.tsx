@@ -56,7 +56,9 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
 
             <Grid container>
               <Grid item xs={12} margin={1}>
-                <Button size="small" className='entitymodal-close-icon' variant="contained" startIcon={<CloseIcon />}
+                <Button size="small" className='entitymodal-close-icon' 
+                        data-testid={"entitymodal-close-icon"}
+                        variant="contained" startIcon={<CloseIcon />}
                         onClick={handleClose} />
               </Grid>
 
@@ -90,12 +92,12 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
                           { reqStatus === 200
                             ? (<i>{reqResponse}</i>) 
                             : ( reqStatus === 0
-                                ? ((<p style={{color: theme.palette.primary.main}}>
+                                ? ((<span style={{color: theme.palette.primary.main}}>
                                       <CircularProgress size={12} /> <i>Loading interesting fact</i>
-                                    </p>))
-                                : ((<p style={{color: theme.palette.error.main}}>
+                                    </span>))
+                                : ((<span style={{color: theme.palette.error.main}}>
                                       <i>Failed requesting an interesting fact</i>
-                                    </p>))
+                                    </span>))
                               )
                           }
                           

@@ -46,17 +46,17 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
 
   return (
     <>
-      <div className='entitymodal-anchor' onClick={handleOpen}>{children}</div>
-      <div>
-        <Modal
-            open={open}
-            onClose={handleClose}
-            
-            className="entitymodal-modal"
-        >
-            <UnhideOnViewportWrapper>
-              <div className='entitymodal-box'>         
+        <div className='entitymodal-anchor' onClick={handleOpen}>{children}</div>
+        <div>
+          <Modal
+              open={open}
+              onClose={handleClose}
+              className="entitymodal-modal"
+          >
 
+            <div className='entitymodal-wrapper'>       
+              <UnhideOnViewportWrapper>
+                <div className='entitymodal-box'>       
                 <Grid container>
 
                   {/* Close modal button */}
@@ -125,11 +125,12 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
                   <p id='desc'>{item.description}</p> 
                 </Grid>
 
-              </div>
-            </UnhideOnViewportWrapper>
-          
-        </Modal>
-      </div>
+              
+                </div>
+              </UnhideOnViewportWrapper>
+            </div>
+          </Modal>
+        </div>
     </>
     
   );

@@ -10,12 +10,16 @@
 	align-items: stretch;
 	align-content: center;
 }
-.entitymodal-box{
+.entitymodal-wrapper{
     overflow-y: auto;
     border-radius: 5px;
     padding: 0;
     max-width: 600px;
     margin: auto auto;
+    outline: none;
+    border: none;
+}
+.entitymodal-box{
     background-color: var(--mui-palette-common-black);
     color: var(--mui-palette-secondary-main);
 }

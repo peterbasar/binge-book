@@ -6,7 +6,7 @@ export enum FRONTEND_ENDPOINTS {
     /* Not implemented */
     TERMS_AND_CONDITIONS = "/terms-and-conditions",
     PRIVACY_POLICY = "/privacy-policy",
-    COLLECTION_STATEMENT = "/collectio-statement",
+    COLLECTION_STATEMENT = "/collection-statement",
     HELP = "/help",
     MANAGE_ACCOUNT = "/manage-account",
 }

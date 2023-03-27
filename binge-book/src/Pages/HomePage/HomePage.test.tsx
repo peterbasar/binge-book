@@ -52,7 +52,6 @@ test('HomePage: carousels and its contents', () => {
     /* Check if there are only moviesToCheck.length number of items */
     expect(Array.from(wrapper.parentElement.parentElement
       .querySelectorAll('.entitycard-card-wrapper'))).toHaveLength(moviesToCheck.length);
-  }
   
 
   /* Check if Latest Series exists and also contains 'show more' */
@@ -63,7 +62,7 @@ test('HomePage: carousels and its contents', () => {
   }
   /* Check if there are items in the list */
   const seriesToCheck: Array<string> = ["Billions", "Wolf Creek"]
-  if (wrapper != null && wrapper.parentElement.parentElement != null){
+  if (wrapper != null && wrapper.parentElement != null && wrapper.parentElement.parentElement != null){
     within(wrapper.parentElement.parentElement).getAllByText(seriesToCheck[0]);
     within(wrapper.parentElement.parentElement).getAllByText(seriesToCheck[1]);
 
@@ -71,4 +70,6 @@ test('HomePage: carousels and its contents', () => {
     expect(Array.from(wrapper.parentElement.parentElement
       .querySelectorAll('.entitycard-card-wrapper'))).toHaveLength(seriesToCheck.length);
   }
+}
+
 });

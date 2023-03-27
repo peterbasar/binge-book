@@ -1,4 +1,41 @@
-# Getting Started with Create React App
+# General
+
+## Stack:
+- React `[^11.10.6]`
+- TypeScript `[^4.9.5]`
+- Zustand (memory management) `[^4.3.6]`
+- React Router v6.9.0 `[^6.9.0]`
+- Jest (testing) `[^27.5.2]`
+- MUI Material (UI library) `[^5.11.14]`
+- Public endpoint: http://numbersapi.com/
+- File with data `src/Assets/data/data.json</b>
+
+## File naming
+
+- Component: `Component.tsx`</b>`
+- Files containing Zustand stores and other helper functions: `Component.store.tsx`</b>`
+- Component test: `Component.test.tsx`</b>`
+- Other functions: `functionName()`</b>`
+- Store naming: `useComponentStore`</b>`
+- Interface naming: `ComponentInterface</b> or `useComponentStoreInterface`
+
+## Tests
+
+- Written for each component and for each page
+- Checking expected contents, mostly passed from the parrent component
+- Checking reaction to store changes such as changing a page
+- Checking if item is clickable using `fireEvent.Click()`
+- Components that depend on the `JSON data file` always initialize store first and load testing data
+- Tests have their own testing data, which is a minified version of original `JSON data file`.
+- To run tests use `npm test` command
+
+## Other notes
+
+- Theme is defined (extend original MUI theme) in `src/Theme.tsx:CustomTheme`. This theme is then loaded in `App.tsx`
+
+# Environment
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

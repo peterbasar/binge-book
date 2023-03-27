@@ -70,3 +70,8 @@ Desktop            |  Mobile
 <video controls>
   <source src="media/mobile.mp4" type="video/mp4">
 </video>
+
+
+Desktop            |  Mobile
+:-------------------------:|:-------------------------:
+[![Mobile version video]](media/mobile.mp4) |  [![Mobile version video]](media/mobile.mp4)

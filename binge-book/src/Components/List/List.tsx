@@ -54,6 +54,7 @@ const List = ({title, rawItems}: ListInterface) => {
       mode = "alphaAsc";
     };
     setItems(getSortedItems(rawItems, mode));
+    setPage(1);
   }, [listMode, setItems, getSortedItems, rawItems])
 
 
@@ -105,7 +106,8 @@ const List = ({title, rawItems}: ListInterface) => {
         {/* Pagination */}
         <Grid container>
           <Grid className={"list-pagination"}>
-            <Pagination defaultPage={page} onChange={(e, v: number) => {setPage(v)}} 
+            <Pagination defaultPage={1} onChange={(e, v: number) => {setPage(v)}} 
+            onLoad={()=>{setPage(1)}}
                         count={Math.round(items.length/itemsPerPage)} color={'secondary'}
                         variant="outlined"       
             />

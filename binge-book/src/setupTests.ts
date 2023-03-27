@@ -33,3 +33,19 @@ jest.mock('@mui/system/cssVars', () => ({
   useCurrentColorScheme: jest.fn(() => 'light'),
 }));
 
+// Create a mock IntersectionObserver constructor function
+class IntersectionObserverMock implements IntersectionObserver {
+    public readonly root: Element | null = null;
+    public readonly rootMargin: string = '';
+    public readonly thresholds: ReadonlyArray<number> = [];
+  
+    constructor(public readonly callback: IntersectionObserverCallback, public readonly options: IntersectionObserverInit = {}) {}
+  
+    public readonly observe = jest.fn();
+    public readonly unobserve = jest.fn();
+    public readonly disconnect = jest.fn();
+    public readonly takeRecords = jest.fn(() => []);
+}
+  
+// Mock the IntersectionObserver API globally
+global.IntersectionObserver = IntersectionObserverMock;

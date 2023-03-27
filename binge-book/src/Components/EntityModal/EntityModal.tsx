@@ -52,9 +52,10 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
           onClose={handleClose}
           
           className="entitymodal-modal"
-        >
+      >
+        <div>
           <UnhideOnViewportWrapper>
-          <div className='entitymodal-box'>         
+            <div className='entitymodal-box'>         
 
               <Grid container>
 
@@ -126,6 +127,7 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
 
             </div>
           </UnhideOnViewportWrapper>
+        </div>
       </Modal>
     </>
     

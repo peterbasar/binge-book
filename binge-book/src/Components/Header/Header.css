@@ -7,6 +7,10 @@
     text-align: center;
 }
 
+.header-link-active{
+    border-bottom: 4px solid white;
+}
+
 .header-desktop-navigation > *, 
 .header-logo-text-wrapper > * {
     color: var(--mui-palette-secondary-main);

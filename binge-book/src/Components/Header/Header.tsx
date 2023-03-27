@@ -7,6 +7,7 @@ import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';
+import { useAppStore } from 'App.store';
 
 
 const Header = () => {
@@ -14,6 +15,9 @@ const Header = () => {
   const toggleMobileNavigation = () => {
     setMobileNavigationOn(!mobileNavigationOn);
   } 
+
+  /* Zustand */
+  const activeEndpoint = useAppStore((state) => state.activeEndpoint);
 
   const theme = useTheme();
 
@@ -31,9 +35,18 @@ const Header = () => {
 
         {/* Desktop navigation */}
         <nav id="header-desktop" className='header-desktop-navigation'>
-          <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>
-          <Link to={FRONTEND_ENDPOINTS.MOVIES}>Movies</Link>
-          <Link to={FRONTEND_ENDPOINTS.SERIES}>Series</Link>
+          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""} 
+                to={FRONTEND_ENDPOINTS.HOMEPAGE}>
+            Home
+          </Link>
+          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
+                to={FRONTEND_ENDPOINTS.MOVIES}>
+                  Movies
+          </Link>
+          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
+                to={FRONTEND_ENDPOINTS.SERIES}>
+                  Series
+          </Link>
         </nav>
 
         {/* Mobile navigation */}
@@ -58,13 +71,22 @@ const Header = () => {
               className="header-mobile-navigation-wrapper">
             <Grid container className='header-mobile-navigation'>
               <Grid item xs={12}>
-                <Link to={FRONTEND_ENDPOINTS.HOMEPAGE}>Home</Link>              
+                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""}
+                      to={FRONTEND_ENDPOINTS.HOMEPAGE}>
+                  Home
+                </Link>              
               </Grid>
               <Grid item xs={12}>
-                <Link to={FRONTEND_ENDPOINTS.MOVIES}>Movies</Link>
+                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
+                      to={FRONTEND_ENDPOINTS.MOVIES}>
+                  Movies
+                </Link>
               </Grid>
               <Grid item xs={12}>
-                <Link to={FRONTEND_ENDPOINTS.SERIES}>Series</Link>  
+                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
+                      to={FRONTEND_ENDPOINTS.SERIES}>
+                  Series
+                </Link>  
               </Grid>
             </Grid>
         </Grid>

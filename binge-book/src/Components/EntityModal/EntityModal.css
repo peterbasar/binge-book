@@ -50,9 +50,6 @@
 .entitymodal-close-icon{
     float: right;
 }
-.entitymodal-close-icon > *{
-    margin: auto auto;
-}
 .entitymodal-text-wrapper > h2 {margin: 0;}
 .entitymodal-text-wrapper{
     margin: 0;

@@ -55,14 +55,19 @@ const EntityModal = ({item, children}: EntityModalInterface) => {
           <div className='entitymodal-box'>         
 
             <Grid container>
+
+              {/* Close modal button */}
               <Grid item xs={12} margin={1}>
                 <Button size="small" className='entitymodal-close-icon' 
                         data-testid={"entitymodal-close-icon"}
-                        variant="contained" startIcon={<CloseIcon />}
-                        onClick={handleClose} />
+                        variant="contained"
+                        onClick={handleClose}>
+                  <CloseIcon />
+                </Button>
               </Grid>
 
               <Grid container sx={{height: {xs: "200px", sm: "360px"}}}>
+
                 {/* Image */}
                 <Grid style={{height: "inherit", maxWidth: "50vw", padding: "10px"}}>
                   <div id="image" className='entitymodal-image-wrapper'>

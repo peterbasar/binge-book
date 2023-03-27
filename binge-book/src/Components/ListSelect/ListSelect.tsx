@@ -6,7 +6,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-/* Constants */
+/* Components */
+import UnhideOnViewportWrapper from 'Animations/UnhideOnViewportWrapper';
 
 
 interface ListSelectInterface {
@@ -20,9 +21,9 @@ const ListSelect = ({activeOption, options, handleChange}: ListSelectInterface) 
   const theme = useTheme();
 
   return (
-    <div>
+    <UnhideOnViewportWrapper>
       <FormControl data-testid="list-select-form-control" sx={{ m: 1, minWidth: 80,
-         "*": {color: theme.palette.secondary.main}}}
+          "*": {color: theme.palette.secondary.main}}}
       >
         <InputLabel id="demo-simple-select-autowidth-label">
           <span>Filter</span>
@@ -51,7 +52,7 @@ const ListSelect = ({activeOption, options, handleChange}: ListSelectInterface) 
           }
         </Select>
       </FormControl>
-    </div>
+    </UnhideOnViewportWrapper>
   );
 }
 export default ListSelect;

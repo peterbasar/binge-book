@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import AddIcon from '@mui/icons-material/Add';
 /* Components */
 import EntityCard from 'Components/EntityCard/EntityCard';
+import UnhideOnViewportWrapper from 'Animations/UnhideOnViewportWrapper';
 
 
 interface CarouselInterface {
@@ -24,13 +25,16 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
 
   return (
     <Box margin={3} style={{ backgroundColor: theme.palette.primary.main}}>
-      <Grid container gap={1} marginBottom={3} alignItems={"center"} className='carousel-title-wrapper' direction={"row"}>
-        {/* Title */}
-        <h1>{title}</h1>
-        <div onClick={() => {navigate(linkUrl)}}>
-          <h3>show more <AddIcon /></h3>
-        </div>
-      </Grid>
+      <UnhideOnViewportWrapper>
+        <Grid container gap={1} marginBottom={3} alignItems={"center"} className='carousel-title-wrapper' direction={"row"}>
+          
+          {/* Title */}
+          <h1>{title}</h1>
+          <div onClick={() => {navigate(linkUrl)}}>
+            <h3>show more <AddIcon style={{verticalAlign: "top"}} /></h3>
+          </div>
+        </Grid>
+      </UnhideOnViewportWrapper>
 
       {/* Items */}
       <Grid container spacing={2} wrap={"nowrap"} overflow={"hidden"} data-testid="carousel-list">

@@ -38,12 +38,12 @@ const HomePage = () => {
       <Carousel
         title='Latest Movies'
         linkUrl='/movies'
-        items={getNLatestMovies()}
+        items={getNLatestMovies(10)}
       />
       <Carousel
         title='Latest Series'
         linkUrl='/series'
-        items={getNLatestSeries()}
+        items={getNLatestSeries(10)}
       />
       <Footer />
     </Box>

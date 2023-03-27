@@ -8,6 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 /* Constants */
 import { FRONTEND_ENDPOINTS } from 'config';
 import { useAppStore } from 'App.store';
+/* Components */
+import UnhideOnViewportWrapper from 'Animations/UnhideOnViewportWrapper';
 
 
 const Header = () => {
@@ -34,20 +36,22 @@ const Header = () => {
       >
 
         {/* Desktop navigation */}
-        <nav id="header-desktop" className='header-desktop-navigation'>
-          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""} 
-                to={FRONTEND_ENDPOINTS.HOMEPAGE}>
-            Home
-          </Link>
-          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
-                to={FRONTEND_ENDPOINTS.MOVIES}>
-                  Movies
-          </Link>
-          <Link className={activeEndpoint == FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
-                to={FRONTEND_ENDPOINTS.SERIES}>
-                  Series
-          </Link>
-        </nav>
+        <UnhideOnViewportWrapper>
+          <nav id="header-desktop" className='header-desktop-navigation'>
+            <Link className={activeEndpoint === FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""} 
+                  to={FRONTEND_ENDPOINTS.HOMEPAGE}>
+              Home
+            </Link>
+            <Link className={activeEndpoint === FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
+                  to={FRONTEND_ENDPOINTS.MOVIES}>
+                    Movies
+            </Link>
+            <Link className={activeEndpoint === FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
+                  to={FRONTEND_ENDPOINTS.SERIES}>
+                    Series
+            </Link>
+          </nav>
+        </UnhideOnViewportWrapper>
 
         {/* Mobile navigation */}
         <div id="header-mobile">
@@ -66,31 +70,34 @@ const Header = () => {
       </Grid>
 
       {/* Mobile navigation panel */}
-      <div style={{position: "relative", width: "100vw"}}>
-        <Grid item xs={12} sx={{display: {"xs": mobileNavigationOn ? "block" : "none" , "md": "none"}}}
-              className="header-mobile-navigation-wrapper">
-            <Grid container className='header-mobile-navigation'>
-              <Grid item xs={12}>
-                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""}
-                      to={FRONTEND_ENDPOINTS.HOMEPAGE}>
-                  Home
-                </Link>              
+      
+        <div style={{position: "relative", width: "100vw"}}>
+          <Grid item xs={12} sx={{display: {"xs": mobileNavigationOn ? "block" : "none" , "md": "none"}}}
+                className="header-mobile-navigation-wrapper">
+            <UnhideOnViewportWrapper>
+              <Grid container className='header-mobile-navigation'>
+                <Grid item xs={12}>
+                  <Link className={activeEndpoint === FRONTEND_ENDPOINTS.HOMEPAGE ? "header-link-active" : ""}
+                        to={FRONTEND_ENDPOINTS.HOMEPAGE}>
+                    Home
+                  </Link>              
+                </Grid>
+                <Grid item xs={12}>
+                  <Link className={activeEndpoint === FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
+                        to={FRONTEND_ENDPOINTS.MOVIES}>
+                    Movies
+                  </Link>
+                </Grid>
+                <Grid item xs={12}>
+                  <Link className={activeEndpoint === FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
+                        to={FRONTEND_ENDPOINTS.SERIES}>
+                    Series
+                  </Link>  
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.MOVIES ? "header-link-active" : ""}
-                      to={FRONTEND_ENDPOINTS.MOVIES}>
-                  Movies
-                </Link>
-              </Grid>
-              <Grid item xs={12}>
-                <Link className={activeEndpoint == FRONTEND_ENDPOINTS.SERIES ? "header-link-active" : ""}
-                      to={FRONTEND_ENDPOINTS.SERIES}>
-                  Series
-                </Link>  
-              </Grid>
-            </Grid>
-        </Grid>
-      </div>
+            </UnhideOnViewportWrapper>
+          </Grid>
+        </div>
     </Grid>
   );
 }

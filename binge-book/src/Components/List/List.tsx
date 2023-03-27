@@ -11,6 +11,7 @@ import { SelectChangeEvent } from "@mui/material";
 import EntityCard from 'Components/EntityCard/EntityCard';
 import { LIST_MODES } from './List.store';
 import ListSelect from 'Components/ListSelect/ListSelect';
+import UnhideOnViewportWrapper from 'Animations/UnhideOnViewportWrapper';
 /* Zustand */
 import { useDataManagerStore } from 'Components/DataManager/DataManager.store';
 import { useListStore } from './List.store';
@@ -69,7 +70,11 @@ const List = ({title, rawItems}: ListInterface) => {
         {/* Title */}
         <Grid container alignItems={"center"}>
           <Grid item>
-            <h1 className='list-title'>{title}</h1>
+            <UnhideOnViewportWrapper>
+              <h1 className='list-title'>
+                {title}
+              </h1>
+            </UnhideOnViewportWrapper>
           </Grid>
         </Grid>
 
@@ -102,7 +107,8 @@ const List = ({title, rawItems}: ListInterface) => {
           <Grid className={"list-pagination"}>
             <Pagination defaultPage={page} onChange={(e, v: number) => {setPage(v)}} 
                         count={Math.round(items.length/itemsPerPage)} color={'secondary'}
-                        variant="outlined"/>
+                        variant="outlined"       
+            />
           </Grid>
         </Grid>
         

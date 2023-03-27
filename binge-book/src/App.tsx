@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import 'App.css';
 import { Routes, Route, useLocation } from "react-router-dom";
 /* Pages */
 import HomePage from 'Pages/HomePage/HomePage';
@@ -17,6 +17,8 @@ import { dataItemInterface } from 'Components/DataManager/DataManager.store';
 import { useAppStore } from 'App.store';
 /* Data of the application */
 import data from "Assets/data/data.json";
+/* Animations */
+import 'Animations/animationsSimple.css'
 
 
 function App() {

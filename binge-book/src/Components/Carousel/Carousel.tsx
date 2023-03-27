@@ -30,8 +30,8 @@ const Carousel = ({title, linkUrl, items}: CarouselInterface) => {
           
           {/* Title */}
           <h1>{title}</h1>
-          <div onClick={() => {navigate(linkUrl)}}>
-            <h3 style={{cursor: "pointer"}} >show more <AddIcon style={{verticalAlign: "top"}} /></h3>
+          <div onClick={() => {navigate(linkUrl)}} style={{cursor: "pointer"}}>
+            <h3>show more <AddIcon style={{verticalAlign: "top"}} /></h3>
           </div>
         </Grid>
       </UnhideOnViewportWrapper>

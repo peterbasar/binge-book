@@ -74,4 +74,4 @@ Desktop            |  Mobile
 
 Desktop            |  Mobile
 :-------------------------:|:-------------------------:
-[![Mobile version video]](media/mobile.mp4) |  [![Mobile version video]](media/mobile.mp4)
+[!Desktop version video](media/desktop.mp4) |  [!Mobile version video](media/mobile.mp4)

@@ -16,9 +16,9 @@ import UnhideOnViewportWrapper from 'Animations/UnhideOnViewportWrapper';
 
 const Footer = () => {
   return (
-    <UnhideOnViewportWrapper>
-      <footer className='footer-wrapper'>
-        <Grid container gap={2}>
+    <footer className='footer-wrapper'>
+      <Grid container gap={2}>
+        <UnhideOnViewportWrapper>
           <Grid item xs={12} className="footer-page-links-wrapper">
             <Link to={FRONTEND_ENDPOINTS.HOMEPAGE} data-testid="footer-home">Home</Link>
             <Link to={FRONTEND_ENDPOINTS.TERMS_AND_CONDITIONS} data-testid="footer-terms-and-conditions">Terms and Conditions</Link>
@@ -26,11 +26,15 @@ const Footer = () => {
             <Link to={FRONTEND_ENDPOINTS.COLLECTION_STATEMENT} data-testid="footer-collection-statement">Collection Statement</Link>
             <Link to={FRONTEND_ENDPOINTS.HELP} data-testid="footer-help">Help</Link>
             <Link to={FRONTEND_ENDPOINTS.MANAGE_ACCOUNT} data-testid="footer-manage-account">Manage Account</Link>
-          </Grid>
+         </Grid>
+        </UnhideOnViewportWrapper>
+        <UnhideOnViewportWrapper>
           <Grid item xs={12}>
             {COPYRIGHT}
           </Grid>
-          <Grid container justifyContent={"space-between"}>
+        </UnhideOnViewportWrapper>
+        <Grid container justifyContent={"space-between"}>
+          <UnhideOnViewportWrapper>
             <Grid item className='footer-social-icons'>
               <a href={OTHER_LINKS.FACEBOOK_LINK} className="footer-facebook-icon" target={"_blank"} rel="noreferrer">
                 <FacebookIcon fontSize='large' />
@@ -42,6 +46,8 @@ const Footer = () => {
                 <InstagramIcon fontSize='large' />
               </a>
             </Grid>
+          </UnhideOnViewportWrapper>
+          <UnhideOnViewportWrapper>
             <Grid item className='footer-store-images-wrapper'>
             {/* APPSTORE_IMAGE, GOOGLEPLAY_IMAGE, MICROSOFT_IMAGE */}
               <a href={OTHER_LINKS.APPSTORE_LINK} target={"_blank"} rel="noreferrer">
@@ -54,10 +60,10 @@ const Footer = () => {
                 <img src={MICROSOFT_IMAGE} alt="Microsoft app store" />
               </a>
             </Grid>
-          </Grid>
+          </UnhideOnViewportWrapper>
         </Grid>
-      </footer>
-    </UnhideOnViewportWrapper>
+      </Grid>
+    </footer>
   );
 }
 export default Footer;

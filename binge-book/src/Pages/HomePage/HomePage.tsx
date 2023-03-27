@@ -26,7 +26,8 @@ const HomePage = () => {
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.palette.primary.main,
-      minHeight: "100vh"
+      minHeight: "100vh",
+      justifyContent: "space-between",
     }}>
       <Header />
       <Promo

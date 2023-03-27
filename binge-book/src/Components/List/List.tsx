@@ -55,7 +55,7 @@ const List = ({title, rawItems}: ListInterface) => {
     };
     setItems(getSortedItems(rawItems, mode));
     setPage(1);
-  }, [listMode, setItems, getSortedItems, rawItems])
+  }, [listMode, setItems, getSortedItems, rawItems, setPage])
 
 
   /* Detect page or items change */

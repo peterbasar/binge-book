@@ -1,5 +1,7 @@
 # Technical assignment: Web application - BingeBook 
 
+## Hosted on: https://d127rb4ao6sc0.cloudfront.net/
+
 ## Task
 - Create <b>Movie Title Listing</b> service
 - Expected time to complete ~1 week (given ~5 days)

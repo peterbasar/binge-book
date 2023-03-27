@@ -9,6 +9,7 @@
 - MUI Material (UI library) `[^5.11.14]`
 - Public endpoint: http://numbersapi.com/
 - File with data `src/Assets/data/data.json</b>
+- Hosted on AWS S3 with CloudFront: https://d127rb4ao6sc0.cloudfront.net/
 
 ## File naming
 
